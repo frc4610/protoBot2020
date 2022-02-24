@@ -36,8 +36,8 @@ public class Pivot extends CommandBase {
   @Override
   public void execute() {
 
-    double triggerValueL = RobotContainer.driver.getRawAxis(2);
-    double triggerValueR = RobotContainer.driver.getRawAxis(3);
+    double triggerValueL = RobotContainer.c_XboxControler.getLeftTriggerAxis();
+    double triggerValueR = RobotContainer.c_XboxControler.getRightTriggerAxis();
     EncoderVal = m_intake.m_encoder.getPosition();
 
     if (triggerValueL > 0.1) {

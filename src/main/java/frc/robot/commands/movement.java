@@ -14,35 +14,30 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 /** An example command that uses an example subsystem. */
-public class movement extends CommandBase {
+public class Movement extends CommandBase {
 
   private final driveTrain m_driveTrain;
 
-   public movement(driveTrain subsystem_driveTrain) {
+  public Movement(driveTrain subsystem_driveTrain) {
 
     m_driveTrain = subsystem_driveTrain;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem_driveTrain);
-   }
+  }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-
-
 
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double  joyValueL = RobotContainer.driver.getRawAxis(1)/5;
-    double  joyValueR = RobotContainer.driver.getRawAxis(5)/5;
+    double joyValueL = RobotContainer.c_XboxControler.getLeftY() / 5;
+    double joyValueR = RobotContainer.c_XboxControler.getRightY() / 5;
 
-      m_driveTrain.move(ControlMode.PercentOutput, joyValueL, -joyValueR);
-
-
-
+    m_driveTrain.move(ControlMode.PercentOutput, joyValueL, -joyValueR);
 
   }
 

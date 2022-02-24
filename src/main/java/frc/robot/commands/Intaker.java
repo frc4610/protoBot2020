@@ -7,7 +7,6 @@ package frc.robot.commands;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.Carrier;
 
-
 import com.ctre.phoenix.motorcontrol.ControlMode;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
@@ -15,19 +14,17 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 /** An example command that uses an example subsystem. */
 public class Intaker extends CommandBase {
 
-   private final Carrier m_carrier;
-   
-   public Intaker(Carrier subsystem_Carrier){
+  private final Carrier m_carrier;
+
+  public Intaker(Carrier subsystem_Carrier) {
 
     m_carrier = subsystem_Carrier;
     addRequirements(subsystem_Carrier);
-   }
+  }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-
-
 
   }
 
@@ -35,18 +32,19 @@ public class Intaker extends CommandBase {
   @Override
   public void execute() {
 
-    double OJoyVal= RobotContainer.driver.getRawAxis(4);
-  
-    /* if(OJoyVal> 0.1  )
-     {
-       m_carrier.move(ControlMode.PercentOutput, OJoyVal);
-     }
-     else{
-      m_carrier.move(ControlMode.PercentOutput, OJoyVal );
-     }*/
+    double OJoyVal = RobotContainer.c_XboxControler.getRightX();
 
-      m_carrier.move(ControlMode.PercentOutput, -OJoyVal/3);
+    /*
+     * if(OJoyVal> 0.1 )
+     * {
+     * m_carrier.move(ControlMode.PercentOutput, OJoyVal);
+     * }
+     * else{
+     * m_carrier.move(ControlMode.PercentOutput, OJoyVal );
+     * }
+     */
 
+    m_carrier.move(ControlMode.PercentOutput, -OJoyVal / 3);
 
   }
 

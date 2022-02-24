@@ -1,4 +1,4 @@
-package frc.robot.UTILS;
+package frc.robot.utils;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj2.command.button.Button;

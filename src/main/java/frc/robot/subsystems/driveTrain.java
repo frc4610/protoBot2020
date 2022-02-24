@@ -4,33 +4,25 @@
 
 package frc.robot.subsystems;
 
-//import edu.wpi.first.wpilibj.motorcontrol.Talon;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
-//import com.revrobotics.CANSparkMax;
-import com.revrobotics.RelativeEncoder;
 
 public class driveTrain extends SubsystemBase {
   private TalonFX driveTrainL;
   private TalonFX driveTrainR;
-  
 
   public driveTrain() {
     driveTrainL = new TalonFX(4);
     driveTrainR = new TalonFX(3);
     driveTrainL.setInverted(false);
 
-
   }
 
-  public void move(ControlMode mode, double speedL, double speedR){
-    driveTrainL.set(mode,speedL);
-    driveTrainR.set(mode,speedR);
+  public void move(ControlMode mode, double speedL, double speedR) {
+    driveTrainL.set(mode, speedL);
+    driveTrainR.set(mode, speedR);
   }
-
-
-
 
   @Override
   public void periodic() {
@@ -41,6 +33,5 @@ public class driveTrain extends SubsystemBase {
   public void simulationPeriodic() {
     // This method will be called once per scheduler run during simulation
   }
-
 
 }

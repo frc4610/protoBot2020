@@ -4,22 +4,17 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 import frc.robot.subsystems.Intake;
-//import frc.robot.Constants;
-import frc.robot.subsystems.intakeArm;
 
 public class IntakeArmUp extends CommandBase {
   /** Creates a new IntakeArmUp. */
-  
+
   private Intake m_intake;
 
-
-  public IntakeArmUp(Intake subsystem_Driver){
-  m_intake = subsystem_Driver;
+  public IntakeArmUp(Intake subsystem_Driver) {
+    m_intake = subsystem_Driver;
     addRequirements(subsystem_Driver);
 
   }
@@ -30,22 +25,21 @@ public class IntakeArmUp extends CommandBase {
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
-  
+  public void initialize() {
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
 
-
     m_intake.move(Constants.INTAKE_ARM_SPEED);
-    
 
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+  }
 
   // Returns true when the command should end.
   @Override
